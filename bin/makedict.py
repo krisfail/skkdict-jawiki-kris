@@ -237,7 +237,7 @@ if __name__ == '__main__':
     result = read_filtered('dat/post_validated.tsv')
     result = preproc(result, skkdict)
     write_skkdict('SKK-JISYO.jawiki', result)
-    write_mecabdic('mecab-userdic.csv', result)
-    write_linderadic('lindera-userdic.csv', result)
+    #write_mecabdic('mecab-userdic.csv', result)
+    #write_linderadic('lindera-userdic.csv', result)
 
     logging.info("Scanned: {0} seconds".format(time.time()-t0))
