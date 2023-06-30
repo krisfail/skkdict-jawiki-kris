@@ -1,11 +1,16 @@
 # jawiki-kana-kanji-dict-kris
 ## Fork元と何が違うの？
-[tokuhirom/jawiki-kana-kanji-dict](https://github.com/tokuhirom/jawiki-kana-kanji-dict) との違い
+[tokuhirom/jawiki-kana-kanji-dict](https://github.com/tokuhirom/jawiki-kana-kanji-dict) との違い  
+SKKでの変換の能率を重視
 * ASCII文字、ひらがな、カタカナ、約物しか含まない候補を除外
+* L辞書に入っている語の除外(実装はWIP)
+   * 例えば`あくせられーた /一方通行/`などは一方通行という語がL辞書に入っているので(**読みと関係なく**)除外される
+   * 当て字や誤検出を一掃できるが巻き込みも多い。要調整
 * その他ルールベースの除外(coming soon™)
+これらの変更により、辞書としての適格性が微妙になるので、MeCab等の辞書作成機能は取り除いた。
 ## これは何？
 
-wikipedia 日本語版のデータを元に、SKK/MeCab の辞書をつくるスクリプトです。
+wikipedia 日本語版のデータを元に、SKK/~~MeCab~~ の辞書をつくるスクリプトです。
 
 github actions で wikipedia から定期的にデータを取得して https://github.com/yuuki76/jawiki-kana-kanji-dict-kris/blob/master/SKK-JISYO.jawiki を、定期的に更新するようにしています。
 (github actions を利用することで、メンテナが何もしなくても自動的に更新されることを期待しています。)
@@ -77,3 +82,4 @@ Wikipedia license is: https://ja.wikipedia.org/wiki/Wikipedia:%E3%82%A6%E3%82%A3
 
 Wikipedia 日本語版がなければ、（もちろん）このプロジェクトはありえませんでしたし、今後も継続的に利用可能な新語辞書を作れるのは、wikipedia あってこそです。
 Wikipedia 日本語版の貢献者各位に感謝いたします。
+
