@@ -1,5 +1,8 @@
-# jawiki-kana-kanji-dict
-
+# jawiki-kana-kanji-dict-kris
+## Fork元と何が違うの？
+[tokuhirom/jawiki-kana-kanji-dict](https://github.com/tokuhirom/jawiki-kana-kanji-dict) との違い
+* ASCII文字、ひらがな、カタカナ、約物しか含まない候補を除外
+* その他ルールベースの除外(coming soon™)
 ## これは何？
 
 wikipedia 日本語版のデータを元に、SKK/MeCab の辞書をつくるスクリプトです。
