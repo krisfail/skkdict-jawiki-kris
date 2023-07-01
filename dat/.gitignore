@@ -3,3 +3,5 @@
 *.tsv
 *.txt
 *.gz
+!post_validated.tsv
+!skipped.tsv
