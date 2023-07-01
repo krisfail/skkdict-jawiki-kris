@@ -1,4 +1,4 @@
-all: SKK-JISYO.jawiki SKK-JISYO.jawikimini
+all: SKK-JISYO.jawiki
 
 clean:
 	rm -f dat/*.tsv
