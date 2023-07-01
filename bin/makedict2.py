@@ -236,7 +236,7 @@ if __name__ == '__main__':
     skkdicts = [parse_skkdict(path, encoding='euc-jp') for path in sys.argv[1:]]
     skkdict = merge_skkdict(skkdicts)
 
-    result = read_filtered('dat/post_validated.tsv')
+    result = read_filtered('dat/post_validatedm.tsv')
     result = preproc(result, skkdict)
     write_skkdict('SKK-JISYO.jawikimini', result)
     #write_mecabdic('mecab-userdic.csv', result)

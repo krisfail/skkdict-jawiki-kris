@@ -42,22 +42,22 @@ dat/post_validated.tsv: dat/converted.tsv bin/post_validator.py jawiki/post_vali
 SKK-JISYO.jawiki: dat/post_validated.tsv bin/makedict.py jawiki/skkdict.py
 	python bin/makedict.py /usr/share/skk/SKK-JISYO.L /usr/share/skk/SKK-JISYO.jinmei /usr/share/skk/SKK-JISYO.geo
 
-dat/grepped.txt: dat/jawiki-latest-abstract.xml
-	grep -E "<title>.*</title>|'''[』|（(]" dat/jawiki-latest-abstract.xml > dat/grepped.txt
+dat/greppedm.txt: dat/jawiki-latest-abstract.xml
+	grep -E "<title>.*</title>|'''[』|（(]" dat/jawiki-latest-abstract.xml > dat/greppedm.txt
 
-dat/scanned.tsv: dat/grepped.txt bin/scanner.py jawiki/scanner.py
-	python bin/scanner.py
+dat/scannedm.tsv: dat/greppedm.txt bin/scannerm.py jawiki/scanner.py
+	python bin/scannerm.py
 
-dat/pre_validated.tsv: dat/scanned.tsv bin/pre_validator.py jawiki/pre_validate.py
-	python bin/pre_validator.py
+dat/pre_validatedm.tsv: dat/scannedm.tsv bin/pre_validatorm.py jawiki/pre_validate.py
+	python bin/pre_validatorm.py
 
-dat/converted.tsv: dat/pre_validated.tsv bin/converter.py jawiki/converter.py jawiki/hojin.py jawiki/jachars.py
-	python bin/converter.py
+dat/convertedm.tsv: dat/pre_validatedm.tsv bin/converterm.py jawiki/converter.py jawiki/hojin.py jawiki/jachars.py
+	python bin/converterm.py
 
-dat/post_validated.tsv: dat/converted.tsv bin/post_validator.py jawiki/post_validate.py user_simpledic.csv
-	python bin/post_validator.py
+dat/post_validatedm.tsv: dat/convertedm.tsv bin/post_validatorm.py jawiki/post_validate.py user_simpledic.csv
+	python bin/post_validatorm.py
 
-SKK-JISYO.jawikimini: dat/post_validated.tsv bin/makedict2.py jawiki/skkdict.py
+SKK-JISYO.jawikimini: dat/post_validatedm.tsv bin/makedict2.py jawiki/skkdict.py
 	python bin/makedict2.py /usr/share/skk/SKK-JISYO.L /usr/share/skk/SKK-JISYO.jinmei /usr/share/skk/SKK-JISYO.geo
 
 .PHONY: all test check
