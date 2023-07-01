@@ -176,7 +176,8 @@ def should_skip(kanji, yomi, skkdict):
 
     if kanji in skkdict:
         return True
-
+    if kanji in skkdict[yomi]:
+        return True
     if kanji in IGNORE_KANJIS:
         return True
 
