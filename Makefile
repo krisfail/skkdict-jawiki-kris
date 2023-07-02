@@ -1,8 +1,5 @@
 all: SKK-JISYO.jawiki
 
-clean:
-	rm -f dat/*.tsv
-
 check: SKK-JISYO.jawiki
 	pytest check.py
 
@@ -60,5 +57,5 @@ dat/post_validatedm.tsv: dat/convertedm.tsv bin/post_validatorm.py jawiki/post_v
 SKK-JISYO.jawikimini: dat/post_validatedm.tsv bin/makedict2.py jawiki/skkdict.py
 	python bin/makedict2.py /usr/share/skk/SKK-JISYO.L /usr/share/skk/SKK-JISYO.jinmei /usr/share/skk/SKK-JISYO.geo
 
-.PHONY: all test check
+.PHONY: all test
 
