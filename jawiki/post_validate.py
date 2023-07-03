@@ -93,12 +93,13 @@ class PostValidator:
         if len(yomi) < 2:
             return f'yomi is too short! {len(yomi)}<2'
 
-        if len(yomi) >= 20:
+        if len(yomi) >= 25:
             # データを見た限り、読みが20文字を超えるものは
             # 複合語しかない。
             #
             # きゃぷてんつばさせかいだいけっせんじゅにあわーるどかっぷ /キャプテン翼世界大決戦!! Jr.ワールドカップ/
             # など。
+            # 警察庁広域重要指定事件くらいは入ってほしいので25字に試験的に引き上げ
             return f'yomi is tooooo long! {len(yomi)}<2'
 
         if len(romkan.to_roma(yomi)) * 1.5 < len(kanji):
