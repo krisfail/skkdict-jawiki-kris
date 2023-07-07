@@ -21,6 +21,12 @@ dat/jawiki-latest-pages-articles.xml: dat/jawiki-latest-pages-articles.xml.bz2
 dat/jawiki-latest-abstract.xml: dat/jawiki-latest-abstract.xml.gz
 	gzip -d --keep --force dat/jawiki-latest-abstract.xml.gz
 
+dat/dic-nico-intersection-pixiv.txt:
+	wget -O dic-nico-intersection-pixiv.txt https://cdn.ncaq.net/dic-nico-intersection-pixiv.txt
+
+dat/dic-nic-pix-clean.tsv: dat/dic-nico-intersection-pixiv.txt
+	sed -e "s/\t固有名詞\tnico-pixiv//g" dat/dic-nico-intersection-pixiv.txt | sed -e "1,8d" > dat/dic-nic-pix-clean.tsv
+
 dat/grepped.txt: dat/jawiki-latest-pages-articles.xml
 	rg "<title>.*</title>|'''[』|（(]" dat/jawiki-latest-pages-articles.xml > dat/grepped.txt
 
@@ -30,8 +36,10 @@ dat/scanned.tsv: dat/grepped.txt bin/scanner.py jawiki/scanner.py
 dat/pre_validated.tsv: dat/scanned.tsv bin/pre_validator.py jawiki/pre_validate.py
 	python bin/pre_validator.py
 
-dat/converted.tsv: dat/pre_validated.tsv bin/converter.py jawiki/converter.py jawiki/hojin.py jawiki/jachars.py
+dat/converted.tsv: dat/pre_validated.tsv bin/converter.py jawiki/converter.py jawiki/hojin.py jawiki/jachars.py dat/dic-nic-pix-clean.tsv
 	python bin/converter.py
+	cat dat/converted.tsv dat/dic-nic-pix-clean.tsv > dat/conv.tsv
+	sort dat/conv.tsv | uniq > dat/converted.tsv
 
 dat/post_validated.tsv: dat/converted.tsv bin/post_validator.py jawiki/post_validate.py user_simpledic.csv
 	python bin/post_validator.py
