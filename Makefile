@@ -22,7 +22,7 @@ dat/jawiki-latest-abstract.xml: dat/jawiki-latest-abstract.xml.gz
 	gzip -d --keep --force dat/jawiki-latest-abstract.xml.gz
 
 dat/grepped.txt: dat/jawiki-latest-pages-articles.xml
-	grep -E "<title>.*</title>|'''[』|（(]" dat/jawiki-latest-pages-articles.xml > dat/grepped.txt
+	rg "<title>.*</title>|'''[』|（(]" dat/jawiki-latest-pages-articles.xml > dat/grepped.txt
 
 dat/scanned.tsv: dat/grepped.txt bin/scanner.py jawiki/scanner.py
 	python bin/scanner.py

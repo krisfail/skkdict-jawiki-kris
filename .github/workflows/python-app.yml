@@ -25,26 +25,26 @@ jobs:
       with:
         submodules: true
         lfs: true
-    - uses: actions/cache@v3
-      with:
-        path: |
-          ~/.cargo/registry
-          ~/.cargo/git
-        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-    - uses: actions-rs/toolchain@v1
-      with:
-        toolchain: stable
-    - uses: actions-rs/cargo@v1
-      with:
-        command: install
-        args: lindera-cli --features ipadic
+    # - uses: actions/cache@v3
+    #   with:
+    #     path: |
+    #       ~/.cargo/registry
+#         ~/.cargo/git
+#       key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+#   - uses: actions-rs/toolchain@v1
+#     with:
+#       toolchain: stable
+#   - uses: actions-rs/cargo@v1
+#     with:
+#       command: install
+#       args: lindera-cli --features ipadic
     - name: Set up Python 3.8
       uses: actions/setup-python@v4
       with:
         python-version: 3.8
     - name: Install dependencies
       run: |
-        sudo apt-get install skkdic skkdic-extra
+        sudo apt-get install skkdic skkdic-extra ripgrep
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
