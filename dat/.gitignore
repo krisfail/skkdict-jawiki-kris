@@ -1,7 +1,4 @@
 *.bz2
 *.xml
-*.tsv
-*.txt
 *.gz
-!/post_validated.tsv
-!/skipped.tsv
+
