@@ -22,7 +22,7 @@ dat/jawiki-latest-abstract.xml: dat/jawiki-latest-abstract.xml.gz
 	gzip -d --keep --force dat/jawiki-latest-abstract.xml.gz
 
 dat/dic-nico-intersection-pixiv.txt:
-	wget -O dic-nico-intersection-pixiv.txt https://cdn.ncaq.net/dic-nico-intersection-pixiv.txt
+	wget -O dat/dic-nico-intersection-pixiv.txt https://cdn.ncaq.net/dic-nico-intersection-pixiv.txt
 
 dat/dic-nic-pix-clean.tsv: dat/dic-nico-intersection-pixiv.txt
 	sed -e "s/\t固有名詞\tnico-pixiv//g" dat/dic-nico-intersection-pixiv.txt | sed -e "s/\tアルファベット\tnico-pixiv//g" | sed -e "1,8d" > dat/dic-nic-pix-clean.tsv
