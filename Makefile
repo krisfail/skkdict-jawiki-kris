@@ -1,7 +1,7 @@
 all: SKK-JISYO.jawiki
 
-# check: SKK-JISYO.jawiki
-# 	pytest check.py
+check: SKK-JISYO.jawiki
+	pytest check.py
 
 test:
 	pytest
@@ -65,5 +65,5 @@ SKK-JISYO.jawiki: dat/post_validated.tsv bin/makedict.py jawiki/skkdict.py
 # SKK-JISYO.jawikimini: dat/post_validatedm.tsv bin/makedict2.py jawiki/skkdict.py
 # 	python bin/makedict2.py /usr/share/skk/SKK-JISYO.L /usr/share/skk/SKK-JISYO.jinmei /usr/share/skk/SKK-JISYO.geo 
 
-.PHONY: all test
+.PHONY: all test check
 
