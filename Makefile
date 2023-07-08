@@ -25,7 +25,7 @@ dat/dic-nico-intersection-pixiv.txt:
 	wget -O dat/dic-nico-intersection-pixiv.txt https://cdn.ncaq.net/dic-nico-intersection-pixiv.txt
 
 dat/dic-nic-pix-clean.tsv: dat/dic-nico-intersection-pixiv.txt
-	sed -e "s/\t固有名詞\tnico-pixiv//g" -e "s/\tアルファベット\tnico-pixiv//g" -e "1,8d" -e "s/\(.*\)\t\(.*\)/\2 \1/g" dat/dic-nico-intersection-pixiv.txt > dat/dic-nic-pix-clean.tsv
+	sed -e "s/\t固有名詞\tnico-pixiv//g" -e "s/\tアルファベット\tnico-pixiv//g" -e "1,8d" -e "s/\(.*\)\t\(.*\)/\2\t\1/g" dat/dic-nico-intersection-pixiv.txt > dat/dic-nic-pix-clean.tsv
 
 dat/grepped.txt: dat/jawiki-latest-pages-articles.xml
 	rg "<title>.*</title>|'''[』|（(]" dat/jawiki-latest-pages-articles.xml > dat/grepped.txt
