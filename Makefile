@@ -9,17 +9,17 @@ test:
 	autopep8 --max-line-length 180 -i *.py */*.py
 	flake8 . --count --exit-zero --max-complexity=30 --max-line-length=1200 --statistics
 
-# dat/jawiki-latest-pages-articles.xml.bz2:
-# 	wget --no-verbose --no-clobber -O dat/jawiki-latest-pages-articles.xml.bz2 https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-pages-articles.xml.bz2
+dat/jawiki-latest-pages-articles.xml.bz2:
+	wget --no-verbose --no-clobber -O dat/jawiki-latest-pages-articles.xml.bz2 https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-pages-articles.xml.bz2
 
-# dat/jawiki-latest-abstract.xml.gz:
-# 	wget --no-verbose --no-clobber -O dat/jawiki-latest-abstract.xml.gz https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-abstract.xml.gz
+dat/jawiki-latest-abstract.xml.gz:
+	wget --no-verbose --no-clobber -O dat/jawiki-latest-abstract.xml.gz https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-abstract.xml.gz
 
-# dat/jawiki-latest-pages-articles.xml: dat/jawiki-latest-pages-articles.xml.bz2
-# 	bunzip2 --keep --force dat/jawiki-latest-pages-articles.xml.bz2
+dat/jawiki-latest-pages-articles.xml: dat/jawiki-latest-pages-articles.xml.bz2
+	bunzip2 --keep --force dat/jawiki-latest-pages-articles.xml.bz2
 
-# dat/jawiki-latest-abstract.xml: dat/jawiki-latest-abstract.xml.gz
-# 	gzip -d --keep --force dat/jawiki-latest-abstract.xml.gz
+dat/jawiki-latest-abstract.xml: dat/jawiki-latest-abstract.xml.gz
+	gzip -d --keep --force dat/jawiki-latest-abstract.xml.gz
 
 dat/dic-nico-intersection-pixiv.txt:
 	wget -O dat/dic-nico-intersection-pixiv.txt https://cdn.ncaq.net/dic-nico-intersection-pixiv.txt
@@ -27,7 +27,7 @@ dat/dic-nico-intersection-pixiv.txt:
 dat/dic-nic-pix-clean.tsv: dat/dic-nico-intersection-pixiv.txt
 	sed -e "s/\t固有名詞\tnico-pixiv//g" dat/dic-nico-intersection-pixiv.txt | sed -e "s/\tアルファベット\tnico-pixiv//g" | sed -e "1,8d" > dat/dic-nic-pix-clean.tsv
 
-dat/grepped.txt: #dat/jawiki-latest-pages-articles.xml
+dat/grepped.txt: dat/jawiki-latest-pages-articles.xml
 	rg "<title>.*</title>|'''[』|（(]" dat/jawiki-latest-pages-articles.xml > dat/grepped.txt
 
 dat/scanned.tsv: dat/grepped.txt bin/scanner.py jawiki/scanner.py
