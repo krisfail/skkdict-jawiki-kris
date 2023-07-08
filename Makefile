@@ -63,7 +63,7 @@ dat/post_validatedm.tsv: dat/convertedm.tsv bin/post_validatorm.py jawiki/post_v
 	python bin/post_validatorm.py
 
 SKK-JISYO.jawikimini: dat/post_validatedm.tsv bin/makedict2.py jawiki/skkdict.py
-	python bin/makedict2.py /usr/share/skk/SKK-JISYO.L /usr/share/skk/SKK-JISYO.jinmei /usr/share/skk/SKK-JISYO.geo
+	python bin/makedict2.py /usr/share/skk/SKK-JISYO.L /usr/share/skk/SKK-JISYO.jinmei /usr/share/skk/SKK-JISYO.geo ./SKK-JISYO.jawiki.manual-rm
 
 .PHONY: all test
 
