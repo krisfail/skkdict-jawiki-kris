@@ -10,7 +10,7 @@ SKKの辞書としての実用性を優先すること。そのためには多�
   * 例えば`あくせられーた /一方通行/`などは一方通行という語がL辞書に入っているので(**読みと関係なく**)除外される。
   * 有害な当て字や誤検出を一掃できるが巻き込みも多い。要調整
 * 単純に、除外すべき読みの追加(一般的に除外すべきものはいくつか溜まったらプルリクを送る予定)
-* ニコニコ大百科とピクシブ百科事典の見出しを利用してさらに語句を補充
+* ニコニコ大百科とピクシブ百科事典の見出しを利用([ncaq氏による生成物による](https://github.com/ncaq/dic-nico-intersection-pixiv))してさらに語句を補充
 * その他ルールベースの除外(coming soon™)  
 
 これらの変更により、辞書としての適格性が微妙になるので、MeCab等の辞書作成機能は無効にした。
@@ -82,7 +82,7 @@ Python scripts are licensed under:
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
     THE SOFTWARE.
 
-Wikipedia license is: [Wikipedia:ウィキペディアを二次利用する](https://ja.wikipedia.org/wiki/Wikipedia:%E3%82%A6%E3%82%A3%E3%82%AD%E3%83%9A%E3%83%87%E3%82%A3%E3%82%A2%E3%82%92%E4%BA%8C%E6%AC%A1%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B)
+Wikipedia license is: [Wikipedia:ウィキペディアを二次利用する](https://ja.wikipedia.org/wiki/Wikipedia:%E3%82%A6%E3%82%A3%E3%82%AD%E3%83%9A%E3%83%87%E3%82%A3%E3%82%A2%E3%82%92%E4%BA%8C%E6%AC%A1%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B)(tl,dr; CC BY-SA 4.0 or GFDL)
 
 自動生成されたファイルは Wikipedia 等のコンテンツに対する軽微利用であり、かつ生成されたファイルには著作権上の創作性がないと私(yuuki76)は考えています。  
 したがって、権利については私は一切主張しないこととします。
