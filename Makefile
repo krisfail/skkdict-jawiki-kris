@@ -10,7 +10,7 @@ test:
 	flake8 . --count --exit-zero --max-complexity=30 --max-line-length=1200 --statistics
 
 dat/jawiki-latest-pages-articles.xml.bz2:
-	wget --no-verbose --no-clobber -O dat/jawiki-latest-pages-articles.xml.bz2 https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-pages-articles.xml.bz2
+	aria2c -x2 -d ./dat https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-pages-articles.xml.bz2
 
 # dat/jawiki-latest-abstract.xml.gz:
 # 	wget --no-verbose --no-clobber -O dat/jawiki-latest-abstract.xml.gz https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-abstract.xml.gz
