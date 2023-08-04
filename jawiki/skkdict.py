@@ -43,6 +43,6 @@ def write_skkdict(outfname, dictionary):
 
             kanjis = dictionary[yomi]
             if len(kanjis) != 0:
-                ofh.write("%s /%s/\n" % (yomi, '/'.join(kanjis)))
+                ofh.write("%s /%s;jwk/\n" % (yomi, '/'.join(kanjis)))
 #            if len(kanjis) > 20:
 #                logging.info("This entry contains too many kanjis: %s -> %s" % (yomi, kanjis))
