@@ -19,7 +19,7 @@ SKKの辞書としての実用性を優先すること。そのためには多�
 
 wikipedia 日本語版のデータ(など)を元に、SKK/~~MeCab~~ の辞書をつくるスクリプトです。
 
-github actions で wikipedia から定期的にデータを取得して [SKK-JISYO.jawiki](https://github.com/yuuki76/jawiki-kana-kanji-dict-kris/blob/master/SKK-JISYO.jawiki) を、定期的に更新するようにしています。
+github actions で wikipedia から定期的にデータを取得して [SKK-JISYO.jawiki](https://github.com/krisfail/jawiki-kana-kanji-dict-kris/blob/master/SKK-JISYO.jawiki) を、定期的に更新するようにしています。
 (github actions を利用することで、メンテナが何もしなくても自動的に更新されることを期待しています。)
 
 ## Requirements
@@ -62,7 +62,7 @@ Python scripts are licensed under:
     The MIT License (MIT)
 
     Copyright © 2020 Tokuhiro Matsuno, http://64p.org/ <tokuhirom@gmail.com>
-    Copyright © 2023 yuuki76 aka Kris Walton, http://kris.fail/ <kris@kris.fail>
+    Copyright © 2023 Kris Walton, http://kris.fail/ <kris@kris.fail>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the “Software”), to deal
