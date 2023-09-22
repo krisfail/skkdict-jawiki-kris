@@ -3,7 +3,7 @@ name = "jawiki-kana-kanji-dict-kris"
 version = "0.1.0"
 description = "Add a short description here"
 authors = [
-    { name = "Kris57", email = "49682577+yuuki76@users.noreply.github.com" }
+    { name = "Kris57", email = "49682577+krisfail@users.noreply.github.com " }
 ]
 dependencies = [
     "jaconv==0.3.4",
